@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('interessi', 'InteressiController');
-Route::resource('interessi', 'ContattiController');
+Route::resource('contatti', 'ContattiController');

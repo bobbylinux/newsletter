@@ -18,7 +18,9 @@ class CreateContattiTable extends Migration
             $table->string('cognome',255);
             $table->string('nome',255);
             $table->string('societa',255);
-            $table->timestamps();
+            $table->timestamp('data_creazione')->default(DB::raw('CURRENT_TIMESTAMP')); //data creazione default sysdate
+            $table->timestamp('data_modifica')->default(DB::raw('CURRENT_TIMESTAMP')); //data modifica default sysdate
+            $table->timestamp('data_cancellazione')->nullable(); //data cancellazione
         });
     }
 

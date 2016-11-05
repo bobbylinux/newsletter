@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Contatto;
+use App\Riferimento;
 use App\Http\Requests;
 
 class ContattiController extends Controller
 {
     private $contatto;
+    private $riferimento;
 
-    public function __construct(Contatto $contatto) {
+    public function __construct(Contatto $contatto, Riferimento $riferimento) {
         $this->contatto = $contatto;
+        $this->riferimento = $riferimento;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +25,7 @@ class ContattiController extends Controller
      */
     public function index()
     {
-        //
+        return view('contatti.index');
     }
 
     /**
@@ -31,7 +35,8 @@ class ContattiController extends Controller
      */
     public function create()
     {
-        //
+        $riferimenti = $this->riferimento->where('cancellato','=',false)->orderby('descrizione')->get();
+        return view('contatti.create',compact('riferimenti'));
     }
 
     /**
