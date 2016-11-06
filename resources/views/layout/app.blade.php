@@ -60,6 +60,7 @@
     <script src="{!! url('ckeditor/ckeditor.js') !!}"></script>
     <script src="{!! url('ckeditor/adapters/jquery.js') !!}"></script>
     <script src="{!! url('js/bootstrap.js') !!}"></script>
+    <script src="{!! url('js/utilities.js') !!}"></script>
     <script src="{!! url('js/app.js') !!}"></script>
   </body>
 </html>
