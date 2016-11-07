@@ -8,14 +8,12 @@ class Contatto extends BaseModel
 {
     protected $table="contatti";
 
-    /**
-     * I riferimenti che appartengono ai contatti.
-     */
-    public function riferimenti()
-    {
-        return $this->belongsToMany('App\Riferimento')->withPivot('valore', 'cancellato')->withTimestamps();
+    public function store($data) {
+        $this->nome = $data['nome'];
+        $this->cognome = $data['cognome'];
+        $this->mail = $data['mail'];
+        $this->save();
     }
-
     /**
      * Gli interessi che appartengono ai contatti.
      */

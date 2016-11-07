@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('index');
+});
+
+Route::get('/', function () {
+    return view('iscrizione');
 });
 
 Route::resource('interessi', 'InteressiController');
